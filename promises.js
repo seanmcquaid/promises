@@ -39,18 +39,31 @@ const moviePromise = new Promise((resolve, reject)=>{
         resolve(parsedBody);
     });
 });
-
 // a promise has a then, the then will run whenever resolved is called inside the promise
 moviePromise.then((dataGivenToResolve)=>{
-    console.log(dataGivenToResolve);
+    return new Promise((resolve,reject)=>{
+        // console.log(dataGivenToResolve);
+        const id = dataGivenToResolve.results[0].id;
+        const castUrl = `${apiBaseUrl}/movie/${id}/credits?api_key=${apiKey}`;
+        // console.log(castUrl);
+        request.get(castUrl,(err,response,body)=>{
+            const parsedBody = JSON.parse(body);
+            resolve(parsedBody);
+        });
+    });
+}).then((actorData)=>{
+    // console.log(actorData);
+    const actorId = actorData.cast[0].id;
+    const personUrl = `${apiBaseUrl}/person/${actorId}?api_key=${apiKey}`;
+    // console.log(peopleUrl);
+    request.get(peopleUrl,(err,response,body)=>{
+        const parsedData = JSON.parse(body);
+        console.log(parsedData);
+    })
 });
+    
 
 // console.log(moviePromise);
 
-// const castUrl = `${apiBaseUrl}/${movieData.results[0].id}/credits?/api_key=${apiKey}`;
-
-// request.get(castUrl,(err,response,body)=>{
-    
-// });
 
 // console.log(movieData);
