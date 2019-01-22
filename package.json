@@ -1,0 +1,23 @@
+{
+  "name": "promises",
+  "version": "1.0.0",
+  "description": "",
+  "main": "promises.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seanmcquaid/promises.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/seanmcquaid/promises/issues"
+  },
+  "homepage": "https://github.com/seanmcquaid/promises#readme",
+  "dependencies": {
+    "request": "^2.88.0"
+  }
+}
