@@ -1,0 +1,5 @@
+set up an express site
+make a function called gewnowplaying
+it should return a opromise
+at / call that function
+use await and async

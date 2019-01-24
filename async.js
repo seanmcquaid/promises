@@ -40,11 +40,11 @@ function getPerson(personId){
 
 async function getMovieInfo (){
     const movieData = await getNowPlaying();
-    // console.log(movieData);
+    console.log(movieData);
     const castData = await getCast(movieData.results[0].id);
     // console.log(castData);
     const personData = await getPerson(castData.cast[0].id);
-    console.log(personData);
+    // console.log(personData);
 }
 
 getMovieInfo();
